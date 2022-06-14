@@ -26,4 +26,4 @@ rm -rf $tmpDir
 
 clear
 
-echo "call generate-font success..."
+echo -en "\033[31;5mcall generate-font success..\033[0m]."
