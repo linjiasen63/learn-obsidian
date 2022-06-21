@@ -440,3 +440,7 @@ table td:nth-child(4) {
 table td:nth-child(5) {
   width: 32%;
 }
+
+.github-markdown-body {
+  background-color: rgb(30, 30, 30);
+}
