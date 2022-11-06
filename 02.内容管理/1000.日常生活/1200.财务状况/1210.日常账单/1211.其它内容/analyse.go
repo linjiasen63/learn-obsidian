@@ -17,7 +17,7 @@ type BillRecord struct {
 }
 
 func main() {
-	filepath := `/Users/linjiasen/personal/life-management/02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/10月.md`
+	filepath := `/Users/linjiasen/personal/life-management/02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/11月.md`
 
 	file, err := os.Open(filepath)
 	if err != nil {
