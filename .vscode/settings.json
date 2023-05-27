@@ -1,6 +1,7 @@
 {
   "editor.fontFamily": "'SanMu', 'HYRunYuan'",
-  "editor.letterSpacing": 2.4,
+  // "editor.fontFamily": "'SanMu', 'Inconsolata Custom', 'Fira Code Custom', 'HYRunYuan',  黑体",
+  "editor.letterSpacing": 0,
   "markdown.styles": [
     ".vscode/markdown.css"
   ]
