@@ -117,7 +117,7 @@ func main() {
 }
 
 func readDateData(recordList []BillRecord, lineStr, dataStr string) []BillRecord {
-	if strings.Index(lineStr, "分类 1") != -1 || strings.Index(lineStr, ":----:") != -1 {
+	if strings.Index(lineStr, "分类 1") != -1 || strings.Index(lineStr, "----") != -1 {
 		return recordList
 	}
 	dataParams := strings.Split(lineStr, "|")
