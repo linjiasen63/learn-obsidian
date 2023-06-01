@@ -1,5 +1,3 @@
 {
-  // "editor.fontFamily": "'SanMu', 'HYRunYuan'，'微软雅黑'",
-  // "editor.letterSpacing": 0,
   "markdown.styles": [".vscode/markdown.css"]
 }
