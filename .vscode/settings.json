@@ -1,3 +1,4 @@
 {
+  "editor.fontFamily": " SanMu, Inconsolata, HYRunYuan",
   "markdown.styles": [".vscode/markdown.css"]
 }
