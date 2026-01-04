@@ -1,0 +1,184 @@
+.purse-view {
+	padding: 20px;
+}
+
+.purse-table-container {
+	margin-bottom: 30px;
+}
+
+.purse-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 10px;
+}
+
+.purse-table th,
+.purse-table td {
+	padding: 8px 12px;
+	text-align: left;
+	border: 1px solid var(--background-modifier-border);
+}
+
+.purse-table th {
+	background-color: var(--background-secondary);
+	font-weight: 600;
+}
+
+.purse-table tbody tr:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.purse-table tbody tr:hover .purse-action-cell {
+	background-color: var(--background-modifier-hover);
+}
+
+.purse-add-btn-container {
+	margin-top: 10px;
+	text-align: left;
+}
+
+.purse-add-btn {
+	padding: 8px 16px;
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 14px;
+	transition: background-color 0.2s;
+}
+
+.purse-add-btn:hover {
+	background-color: var(--interactive-accent-hover);
+}
+
+.purse-action-header {
+	text-align: right !important;
+	white-space: nowrap;
+	position: sticky;
+	right: 0;
+	background-color: var(--background-secondary);
+	z-index: 10;
+	box-shadow: -2px 0 6px -2px rgba(0, 0, 0, 0.12);
+}
+
+.purse-action-header::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	background-color: var(--background-modifier-border);
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.purse-action-cell {
+	text-align: right !important;
+	white-space: nowrap;
+	position: sticky;
+	right: 0;
+	background-color: var(--background-primary);
+	z-index: 10;
+	box-shadow: -2px 0 6px -2px rgba(0, 0, 0, 0.12);
+}
+
+.purse-action-cell::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	background-color: var(--background-modifier-border);
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.purse-table tbody tr .purse-action-cell {
+	background-color: var(--background-primary);
+}
+
+.purse-table tbody tr:hover .purse-action-cell {
+	background-color: var(--background-modifier-hover);
+}
+
+.purse-action-buttons {
+	display: flex;
+	gap: 4px;
+	justify-content: flex-end;
+	white-space: nowrap;
+}
+
+.purse-edit-btn {
+	padding: 4px 8px;
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 11px;
+	transition: background-color 0.2s;
+	white-space: nowrap;
+}
+
+.purse-edit-btn:hover {
+	background-color: var(--interactive-accent-hover);
+}
+
+.purse-delete-btn {
+	padding: 4px 8px;
+	background-color: var(--background-modifier-error);
+	color: var(--text-on-accent);
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 11px;
+	transition: background-color 0.2s;
+	white-space: nowrap;
+}
+
+.purse-delete-btn:hover {
+	background-color: var(--background-modifier-error-hover);
+}
+
+.purse-add-modal {
+	padding: 20px;
+}
+
+.purse-add-modal > div {
+	margin-bottom: 15px;
+}
+
+.purse-add-modal label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: 500;
+}
+
+.purse-add-modal input[type="text"],
+.purse-add-modal input[type="number"],
+.purse-add-modal select {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background-color: var(--background-primary);
+	color: var(--text-normal);
+}
+
+.purse-add-modal input[type="text"]:focus,
+.purse-add-modal input[type="number"]:focus,
+.purse-add-modal select:focus {
+	outline: none;
+	border-color: var(--interactive-accent);
+}
+
+.modal-button-container {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+	margin-top: 20px;
+}
+

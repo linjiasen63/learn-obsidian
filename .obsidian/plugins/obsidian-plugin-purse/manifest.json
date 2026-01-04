@@ -1,0 +1,12 @@
+{
+	"id": "obsidian-plugin-purse",
+	"name": "Purse - 收支明细",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "用于记录日常收支明细的插件",
+	"author": "Your Name",
+	"authorUrl": "",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}
+
