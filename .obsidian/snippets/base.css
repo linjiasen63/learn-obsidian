@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "sanmu";
+  src: url("../fonts/SanMu.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  font-family: SanMu !important;
+  letter-spacing: 1.6px !important;
+  font-size: 13.6px !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.theme-dark.minimal-atom-dark {
+  --bg1: rgb(30, 30, 30);
+  --bg2: rgb(37, 37, 38);
+}
+
+.cm-s-obsidian span.cm-math,
+.cm-s-obsidian span.hmd-fold-math-placeholder {
+  font-style: normal;
+}
+
+.markdown-rendered th,
+.markdown-rendered td {
+  border: 1px solid var(--background-modifier-border) !important;
+}
+
+table {
+  width: 100% !important;
+  min-width: 600px !important;
+}
+
+table td:nth-child(1) {
+  width: 16%;
+}
+
+table td:nth-child(2) {
+  width: 16%;
+}
+
+table td:nth-child(3) {
+  width: 16%;
+}
+
+table td:nth-child(4) {
+  width: 16%;
+}
+
+table td:nth-child(5) {
+  width: 32%;
+}
+
+[title="evaluate formulas"] {
+  display: none;
+}
+
+.markdown-preview-section > div {
+  overflow: auto;
+}
+
+.markdown-source-view .cm-content > [contenteditable="false"] {
+  overflow: auto;
+}
+
+/* ==================== native: common font color */
+
+.theme-dark.minimal-macos-dark,
+.theme-light.minimal-macos-light.minimal-light-contrast .mod-left-split,
+.theme-light.minimal-macos-light.minimal-light-contrast .titlebar,
+.theme-light.minimal-macos-light.minimal-light-contrast
+  .workspace-fake-target-overlay.is-in-sidebar,
+.theme-light.minimal-macos-light.minimal-light-contrast
+  .workspace-ribbon.mod-left:not(.is-collapsed),
+.theme-light.minimal-macos-light.minimal-light-contrast.is-mobile
+  .workspace-drawer.mod-left,
+.theme-light.minimal-macos-light.minimal-light-contrast.minimal-status-off
+  .status-bar {
+  --tx1: #aeaeae;
+}
+
+/* ==================== native: todo-item element */
+
+:root {
+  --checkbox-top: 4px;
+  --checkbox-size: 16px;
+  --checkbox-icon: 18px;
+}
+
+.task-list-item-checkbox {
+  border-radius: 2px !important;
+}
+
+.checklist-plugin-main .group .compact > .toggle .checked,
+.is-flashing input[type="checkbox"]:checked,
+input[type="checkbox"]:checked {
+  background-image: url('data:image/svg+xml; utf8, <svg t="1651850214025" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1909" width="200" height="200"><path d="M384 768c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733334s42.666667-17.066667 59.733333 0L384 665.6 823.466667 226.133333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733334l-469.333333 469.333333c-8.533333 8.533333-17.066667 12.8-29.866667 12.8z" p-id="1910" fill="%23ffffff"></path></svg>');
+}
+
+/* ==================== plugin: number-headings */
+
+.menu-item-icon {
+  width: 16px;
+}
+
+.menu-item-icon::before {
+  content: "#";
+  display: inline-block;
+  font-size: 16px;
+}
+
+.menu-item-icon svg {
+  display: none;
+}

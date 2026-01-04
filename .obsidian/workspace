@@ -1,0 +1,130 @@
+{
+  "main": {
+    "id": "e998a7b6d4a529ca",
+    "type": "split",
+    "children": [
+      {
+        "id": "d153e524e9bd3f5d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2023/04月.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "dfa0035bbb9c9f99",
+    "type": "split",
+    "children": [
+      {
+        "id": "8c0ffc66ab03fe6e",
+        "type": "tabs",
+        "dimension": 64.11917098445595,
+        "children": [
+          {
+            "id": "ef51d65550eb961f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "72d30479fe163b2b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "146146ba6536712a",
+        "type": "tabs",
+        "dimension": 35.880829015544045,
+        "children": [
+          {
+            "id": "e07c93b540cf68e4",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2023/04月.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 249
+  },
+  "right": {
+    "id": "c6b3f5f70f8d323e",
+    "type": "split",
+    "children": [
+      {
+        "id": "2feb598bffd86d68",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "08d223ecef077603",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2023/04月.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e1884d6fc462579a",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 120.5,
+    "collapsed": true
+  },
+  "active": "d153e524e9bd3f5d",
+  "lastOpenFiles": [
+    "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2023/04月.md",
+    "02.内容管理/0000.临时存档/README.md",
+    "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2023/02月.md",
+    "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/11月.md",
+    "02.内容管理/4000.经验总结/4100.阅读总结/220615蛤蟆先生去看心理医生.md",
+    "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/05月.md",
+    "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/03月.md",
+    "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/04月.md",
+    "02.内容管理/3000.营生技能/3100.编程技能/3110.算法知识/初识算法.md",
+    "02.内容管理/1000.日常生活/1100.日常作息/a.行为准则.md"
+  ]
+}

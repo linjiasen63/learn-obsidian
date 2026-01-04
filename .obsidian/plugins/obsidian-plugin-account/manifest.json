@@ -1,0 +1,12 @@
+{
+	"id": "account-manager",
+	"name": "Account Manager",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "按月记录账单并提供汇总功能",
+	"author": "Your Name",
+	"authorUrl": "",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}
+

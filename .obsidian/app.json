@@ -1,0 +1,21 @@
+{
+  "legacyEditor": false,
+  "livePreview": true,
+  "showLineNumber": false,
+  "communityThemeSortOrder": "download",
+  "readableLineLength": false,
+  "defaultViewMode": "source",
+  "communityPluginSortOrder": "release",
+  "mobileToolbarCommands": [
+    "editor:undo",
+    "editor:redo",
+    "editor:toggle-keyboard",
+    "table-editor-obsidian:delete-row",
+    "table-editor-obsidian:next-cell",
+    "table-editor-obsidian:format-table"
+  ],
+  "useTab": false,
+  "tabSize": 4,
+  "showFrontmatter": false,
+  "showIndentGuide": true
+}

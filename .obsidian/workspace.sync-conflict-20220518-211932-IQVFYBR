@@ -1,0 +1,120 @@
+{
+  "main": {
+    "id": "e998a7b6d4a529ca",
+    "type": "split",
+    "children": [
+      {
+        "id": "a6a8ce3152abd320",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/05月.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2f1a40ce28a92731",
+    "type": "split",
+    "children": [
+      {
+        "id": "1e1e84e044aa1504",
+        "type": "tabs",
+        "dimension": 45.33678756476684,
+        "children": [
+          {
+            "id": "b30ee743a4645652",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "a49c1aef91ed43c6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "600daa66c9a9d6f4",
+        "type": "tabs",
+        "dimension": 54.66321243523316,
+        "children": [
+          {
+            "id": "4ed18a3db230bcb8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/05月.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "db821bcc4dafa446",
+    "type": "split",
+    "children": [
+      {
+        "id": "5dba6f0e2d468a62",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3e10e51eb584219e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/05月.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "a6a8ce3152abd320",
+  "lastOpenFiles": [
+    "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/05月.md",
+    "02.内容管理/3000.营生技能/3100.编程技能/3110.算法知识/初识算法.md",
+    "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/04月.md",
+    "02.内容管理/1000.日常生活/1100.日常作息/a.行为准则.md",
+    "02.内容管理/1000.日常生活/1200.财务状况/1220.愿望清单/a.清单明细.md",
+    "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/01月.md",
+    "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/02月.md",
+    "02.内容管理/1000.日常生活/1200.财务状况/1210.日常账单/2022/03月.md",
+    "02.内容管理/2000.项目规划/README.md",
+    "一.人生管理/1000.日常生活/1200.财务状况/1220.愿望清单/a.清单明细.md"
+  ]
+}

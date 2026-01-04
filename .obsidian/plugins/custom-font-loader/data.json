@@ -1,0 +1,7 @@
+{
+  "font_folder": ".obsidian/fonts/",
+  "font": "20SuiZhengZhiDangDaZhiNian.ttf",
+  "force_mode": true,
+  "custom_css_mode": true,
+  "custom_css": "/* Example CSS for your font: 20suizhengzhidangdazhinian */\n\n/* Apply to all text */\n:root * {\n\t--font-default: '20suizhengzhidangdazhinian';\n\t--default-font: '20suizhengzhidangdazhinian';\n\t--font-family-editor: '20suizhengzhidangdazhinian';\n\t--font-interface-override: '20suizhengzhidangdazhinian';\n\t--font-text-override: '20suizhengzhidangdazhinian';\n}\n\n/* Example: Apply to custom CSS class */\n.custom-font * {\n\tfont-family: '20suizhengzhidangdazhinian' !important;\n}\n\n/* Example: Apply to specific elements only */\n.custom-font h1, .custom-font h2, .custom-font h3 {\n\tfont-family: '20suizhengzhidangdazhinian' !important;\n}"
+}

@@ -1,0 +1,14 @@
+{
+  "baseFontSize": 11,
+  "cssTheme": "",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "base"
+  ],
+  "translucency": false,
+  "baseFontSizeAction": true,
+  "accentColor": "",
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "monospaceFontFamily": ""
+}

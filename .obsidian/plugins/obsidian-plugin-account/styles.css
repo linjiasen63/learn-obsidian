@@ -1,0 +1,610 @@
+/* 账单编辑器容器样式 */
+.account-editor-container {
+	margin: 1em 0;
+	padding: 1em;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	background: var(--background-primary);
+}
+
+.account-editor-wrapper {
+	width: 100%;
+}
+
+.account-editor-wrapper h4 {
+	margin-top: 0;
+	margin-bottom: 1em;
+	color: var(--text-normal);
+}
+
+/* 表单样式 */
+.account-editor-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	margin-bottom: 1.5em;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+
+.form-group label {
+	font-weight: 500;
+	color: var(--text-normal);
+	font-size: 0.9em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+	padding: 0.5em;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-size: 0.9em;
+	font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+	outline: none;
+	border-color: var(--interactive-accent);
+	box-shadow: 0 0 0 2px var(--background-modifier-border-hover);
+}
+
+.form-group textarea {
+	resize: vertical;
+	min-height: 60px;
+}
+
+.form-actions {
+	display: flex;
+	gap: 0.5em;
+	justify-content: flex-end;
+}
+
+.add-account-btn {
+	padding: 0.6em 1.2em;
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 500;
+	transition: background 0.2s;
+}
+
+.add-account-btn:hover {
+	background: var(--interactive-accent-hover);
+}
+
+/* 账单列表样式 */
+.account-editor-list {
+	margin-top: 1.5em;
+}
+
+.editor-summary {
+	padding: 1em;
+	background: var(--background-secondary);
+	border-radius: 6px;
+	margin-bottom: 1em;
+}
+
+.summary-line {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.3em 0;
+	font-size: 0.95em;
+}
+
+.summary-line .income {
+	color: #4caf50;
+	font-weight: 600;
+}
+
+.summary-line .expense {
+	color: #f44336;
+	font-weight: 600;
+}
+
+.editor-items-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+
+.editor-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.8em;
+	background: var(--background-secondary);
+	border-radius: 4px;
+	border-left: 3px solid var(--background-modifier-border);
+}
+
+.editor-item:hover {
+	background: var(--background-modifier-hover);
+}
+
+.item-info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3em;
+	flex: 1;
+}
+
+.item-date {
+	font-size: 0.85em;
+	color: var(--text-muted);
+}
+
+.item-category {
+	font-weight: 500;
+	color: var(--text-normal);
+}
+
+.item-desc {
+	font-size: 0.9em;
+	color: var(--text-muted);
+	font-style: italic;
+}
+
+.item-amount {
+	font-weight: 600;
+	font-size: 1.1em;
+	margin-right: 0.5em;
+}
+
+.item-amount.income {
+	color: #4caf50;
+}
+
+.item-amount.expense {
+	color: #f44336;
+}
+
+.delete-item-btn {
+	padding: 0.4em 0.8em;
+	background: var(--background-modifier-border);
+	color: var(--text-normal);
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 0.85em;
+	transition: background 0.2s;
+}
+
+.delete-item-btn:hover {
+	background: var(--background-modifier-border-hover);
+}
+
+.empty-state {
+	text-align: center;
+	color: var(--text-muted);
+	padding: 2em;
+	font-style: italic;
+}
+
+.account-notice {
+	padding: 0.8em 1em;
+	border-radius: 4px;
+	margin-top: 1em;
+	animation: slideIn 0.3s ease-out;
+}
+
+.account-notice.success {
+	background: #4caf50;
+	color: white;
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* 账单视图样式 */
+.account-header {
+	margin-bottom: 1.5em;
+}
+
+.account-header h2 {
+	margin-bottom: 1em;
+}
+
+.month-selector {
+	padding: 0.5em 1em;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-size: 1em;
+	cursor: pointer;
+}
+
+.account-summary {
+	padding: 1.5em;
+	background: var(--background-secondary);
+	border-radius: 8px;
+	margin-bottom: 2em;
+}
+
+.account-summary h3 {
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+.summary-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5em 0;
+	font-size: 1em;
+}
+
+.category-summary {
+	margin-top: 1.5em;
+	padding-top: 1.5em;
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+.category-summary h4 {
+	margin-top: 0;
+	margin-bottom: 1em;
+	font-size: 0.95em;
+}
+
+.category-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.4em 0;
+	font-size: 0.9em;
+}
+
+.account-list {
+	margin-top: 2em;
+}
+
+.account-list h3 {
+	margin-bottom: 1em;
+}
+
+.add-button {
+	padding: 0.7em 1.5em;
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 500;
+	margin-bottom: 1em;
+	transition: background 0.2s;
+}
+
+.add-button:hover {
+	background: var(--interactive-accent-hover);
+}
+
+.items-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8em;
+}
+
+.account-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+	background: var(--background-secondary);
+	border-radius: 6px;
+	border-left: 4px solid var(--background-modifier-border);
+	transition: background 0.2s;
+}
+
+.account-item:hover {
+	background: var(--background-modifier-hover);
+}
+
+.item-left {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4em;
+	flex: 1;
+}
+
+.item-date {
+	font-size: 0.85em;
+	color: var(--text-muted);
+}
+
+.item-category {
+	font-weight: 600;
+	color: var(--text-normal);
+	font-size: 1em;
+}
+
+.item-description {
+	font-size: 0.9em;
+	color: var(--text-muted);
+	font-style: italic;
+}
+
+.item-right {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+.item-actions {
+	display: flex;
+	gap: 0.5em;
+}
+
+.edit-btn,
+.delete-btn {
+	padding: 0.5em 1em;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background: var(--background-primary);
+	color: var(--text-normal);
+	cursor: pointer;
+	font-size: 0.85em;
+	transition: all 0.2s;
+}
+
+.edit-btn:hover {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border-color: var(--interactive-accent);
+}
+
+.delete-btn:hover {
+	background: #f44336;
+	color: white;
+	border-color: #f44336;
+}
+
+/* 对话框样式 */
+.account-dialog {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10000;
+}
+
+.dialog-content {
+	background: var(--background-primary);
+	border-radius: 8px;
+	padding: 2em;
+	min-width: 400px;
+	max-width: 90%;
+	max-height: 90vh;
+	overflow-y: auto;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dialog-content h3 {
+	margin-top: 0;
+	margin-bottom: 1.5em;
+}
+
+.dialog-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.5em;
+	margin-top: 1.5em;
+}
+
+.cancel-btn,
+.save-btn {
+	padding: 0.6em 1.2em;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 500;
+	transition: background 0.2s;
+}
+
+.cancel-btn {
+	background: var(--background-modifier-border);
+	color: var(--text-normal);
+}
+
+.cancel-btn:hover {
+	background: var(--background-modifier-border-hover);
+}
+
+.save-btn {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+}
+
+.save-btn:hover {
+	background: var(--interactive-accent-hover);
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+	.account-editor-form {
+		gap: 0.8em;
+	}
+
+	.editor-item {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5em;
+	}
+
+	.item-amount {
+		margin-right: 0;
+	}
+
+	.dialog-content {
+		min-width: auto;
+		width: 95%;
+		padding: 1.5em;
+	}
+}
+
+/* 实时预览 - 每日表格 */
+.account-day-table-wrapper {
+	margin: 1em 0 2em;
+	padding: 1em;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	background: var(--background-primary);
+}
+
+.account-day-controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1em;
+}
+
+.account-day-title {
+	font-weight: 600;
+	font-size: 1.1em;
+}
+
+.account-day-add-btn {
+	padding: 0.4em 1em;
+	border: none;
+	border-radius: 4px;
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	cursor: pointer;
+	font-weight: 500;
+}
+
+.account-day-add-btn:hover {
+	background: var(--interactive-accent-hover);
+}
+
+.account-day-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.account-day-table th,
+.account-day-table td {
+	padding: 0.6em;
+	border-bottom: 1px solid var(--background-modifier-border);
+	text-align: left;
+}
+
+.account-day-table th {
+	background: var(--background-secondary);
+	font-weight: 600;
+}
+
+.account-day-actions {
+	display: flex;
+	gap: 0.4em;
+}
+
+.account-day-action-btn {
+	padding: 0.3em 0.8em;
+	border-radius: 4px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-primary);
+	cursor: pointer;
+	font-size: 0.85em;
+}
+
+.account-day-action-btn:hover {
+	background: var(--background-modifier-hover);
+}
+
+.account-day-action-btn.danger {
+	color: #f44336;
+	border-color: #f44336;
+}
+
+.account-day-summary {
+	display: flex;
+	gap: 1em;
+	padding-top: 1em;
+	font-weight: 600;
+}
+
+.account-day-summary .income {
+	color: #4caf50;
+}
+
+.account-day-summary .expense {
+	color: #f44336;
+}
+
+.account-day-empty {
+	text-align: center;
+	color: var(--text-muted);
+	padding: 1em 0;
+	font-style: italic;
+}
+
+/* Modal 样式 */
+.account-day-modal .account-day-modal__title {
+	margin-bottom: 1em;
+}
+
+.account-day-modal__form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8em;
+}
+
+.account-day-modal__field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3em;
+}
+
+.account-day-modal__field input,
+.account-day-modal__field textarea,
+.account-day-modal__field select {
+	padding: 0.5em;
+	border-radius: 4px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-primary);
+	color: var(--text-normal);
+}
+
+.account-day-modal__actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.5em;
+	margin-top: 1.2em;
+}
+
+.account-day-modal__btn {
+	padding: 0.5em 1.1em;
+	border-radius: 4px;
+	border: 1px solid var(--background-modifier-border);
+	cursor: pointer;
+	background: var(--background-primary);
+}
+
+.account-day-modal__btn.mod-confirm {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border-color: var(--interactive-accent);
+}
+
