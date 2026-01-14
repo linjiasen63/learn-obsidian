@@ -359,12 +359,14 @@ var PursePlugin = class extends import_obsidian3.Plugin {
         const headerRow = table.querySelector("thead tr");
         if (!headerRow)
           return;
-        const headers = Array.from(headerRow.querySelectorAll("th")).map((th) => {
-          var _a;
-          return (_a = th.textContent) == null ? void 0 : _a.trim();
-        });
+        const headers = Array.from(headerRow.querySelectorAll("th")).map(
+          (th) => {
+            var _a;
+            return (_a = th.textContent) == null ? void 0 : _a.trim();
+          }
+        );
         if (headers.length >= 5 && headers[0] === "\u7C7B\u578B" && headers[1] === "\u5206\u7C7B" && headers[2] === "\u6807\u7B7E" && headers[3] === "\u6570\u989D" && headers[4] === "\u5907\u6CE8") {
-          this.customizeTable(table, file, context);
+          this.customizeTable(table, file, context, element);
         }
       });
     });
@@ -507,10 +509,18 @@ var PursePlugin = class extends import_obsidian3.Plugin {
         if (dateMatch) {
           const year = parseInt(dateMatch[1]);
           const month = parseInt(dateMatch[2]);
-          console.log(`[Purse Plugin] \u5F00\u59CB\u8865\u5168\u7F3A\u5931\u7684\u65E5\u671F: ${year}-${month.toString().padStart(2, "0")}`);
-          cleanedContent = await this.completeMissingDates(cleanedContent, year, month);
+          console.log(
+            `[Purse Plugin] \u5F00\u59CB\u8865\u5168\u7F3A\u5931\u7684\u65E5\u671F: ${year}-${month.toString().padStart(2, "0")}`
+          );
+          cleanedContent = await this.completeMissingDates(
+            cleanedContent,
+            year,
+            month
+          );
         } else {
-          console.warn(`[Purse Plugin] date \u5C5E\u6027\u683C\u5F0F\u4E0D\u6B63\u786E\uFF0C\u5E94\u4E3A yyyy-MM \u683C\u5F0F: ${dateStr}`);
+          console.warn(
+            `[Purse Plugin] date \u5C5E\u6027\u683C\u5F0F\u4E0D\u6B63\u786E\uFF0C\u5E94\u4E3A yyyy-MM \u683C\u5F0F: ${dateStr}`
+          );
         }
       }
       if (cleanedContent !== content) {
@@ -518,7 +528,10 @@ var PursePlugin = class extends import_obsidian3.Plugin {
         await this.app.vault.modify(file, cleanedContent);
       }
     } else {
-      console.error(`[Purse Plugin] \u6587\u4EF6\u683C\u5F0F\u6821\u9A8C\u5931\u8D25: ${file.path}`, result.reason);
+      console.error(
+        `[Purse Plugin] \u6587\u4EF6\u683C\u5F0F\u6821\u9A8C\u5931\u8D25: ${file.path}`,
+        result.reason
+      );
     }
     return result;
   }
@@ -526,7 +539,9 @@ var PursePlugin = class extends import_obsidian3.Plugin {
    * 补全缺失的日期
    */
   async completeMissingDates(content, year, month) {
-    console.log(`[Purse Plugin] \u5F00\u59CB\u8865\u5168\u7F3A\u5931\u7684\u65E5\u671F: ${year}-${month.toString().padStart(2, "0")}`);
+    console.log(
+      `[Purse Plugin] \u5F00\u59CB\u8865\u5168\u7F3A\u5931\u7684\u65E5\u671F: ${year}-${month.toString().padStart(2, "0")}`
+    );
     const lines = content.split("\n");
     const daysInMonth = new Date(year, month, 0).getDate();
     console.log(`[Purse Plugin] \u8BE5\u6708\u5171\u6709 ${daysInMonth} \u5929`);
@@ -540,7 +555,9 @@ var PursePlugin = class extends import_obsidian3.Plugin {
         }
       }
     }
-    console.log(`[Purse Plugin] \u5DF2\u5B58\u5728\u7684\u65E5\u671F: ${Array.from(existingDates.keys()).sort((a, b) => a - b).join(", ") || "\u65E0"}`);
+    console.log(
+      `[Purse Plugin] \u5DF2\u5B58\u5728\u7684\u65E5\u671F: ${Array.from(existingDates.keys()).sort((a, b) => a - b).join(", ") || "\u65E0"}`
+    );
     const missingDates = [];
     for (let day = 1; day <= daysInMonth; day++) {
       if (!existingDates.has(day)) {
@@ -551,7 +568,9 @@ var PursePlugin = class extends import_obsidian3.Plugin {
       console.log("[Purse Plugin] \u6240\u6709\u65E5\u671F\u90FD\u5DF2\u5B58\u5728\uFF0C\u65E0\u9700\u8865\u5168");
       return content;
     }
-    console.log(`[Purse Plugin] \u7F3A\u5931\u7684\u65E5\u671F: ${missingDates.join(", ")}\uFF0C\u5171 ${missingDates.length} \u4E2A`);
+    console.log(
+      `[Purse Plugin] \u7F3A\u5931\u7684\u65E5\u671F: ${missingDates.join(", ")}\uFF0C\u5171 ${missingDates.length} \u4E2A`
+    );
     const tableHeader = "| \u7C7B\u578B | \u5206\u7C7B | \u6807\u7B7E | \u6570\u989D | \u5907\u6CE8 |";
     const tableSeparator = "| --- | --- | --- | --- | --- |";
     const newLines = [...lines];
@@ -575,7 +594,9 @@ var PursePlugin = class extends import_obsidian3.Plugin {
           if (trimmedLine === "") {
             return i + 1;
           }
-          const rowMatch = trimmedLine.match(/^\| (支出|收入) \| (.+) \| (.*) \| (\d+\.\d{2}) \| (.*) \|$/);
+          const rowMatch = trimmedLine.match(
+            /^\| (支出|收入) \| (.+) \| (.*) \| (\d+\.\d{2}) \| (.*) \|$/
+          );
           if (rowMatch) {
             continue;
           } else if (trimmedLine.startsWith("|")) {
@@ -620,12 +641,16 @@ var PursePlugin = class extends import_obsidian3.Plugin {
           }
         }
         existingDates.set(day, insertIndex);
-        console.log(`[Purse Plugin] \u5DF2\u8865\u5168\u65E5\u671F: ${day}\u53F7\uFF0C\u63D2\u5165\u4F4D\u7F6E: ${insertIndex}`);
+        console.log(
+          `[Purse Plugin] \u5DF2\u8865\u5168\u65E5\u671F: ${day}\u53F7\uFF0C\u63D2\u5165\u4F4D\u7F6E: ${insertIndex}`
+        );
       } else {
         console.warn(`[Purse Plugin] \u65E0\u6CD5\u627E\u5230\u65E5\u671F ${day}\u53F7 \u7684\u63D2\u5165\u4F4D\u7F6E`);
       }
     }
-    console.log(`[Purse Plugin] \u65E5\u671F\u8865\u5168\u5B8C\u6210\uFF0C\u5171\u8865\u5168 ${missingDates.length} \u4E2A\u65E5\u671F`);
+    console.log(
+      `[Purse Plugin] \u65E5\u671F\u8865\u5168\u5B8C\u6210\uFF0C\u5171\u8865\u5168 ${missingDates.length} \u4E2A\u65E5\u671F`
+    );
     return newLines.join("\n");
   }
   /**
@@ -710,13 +735,18 @@ var PursePlugin = class extends import_obsidian3.Plugin {
           continue;
         }
         if (trimmedLine.startsWith("|")) {
-          const rowMatch = trimmedLine.match(/^\| (支出|收入) \| (.+) \| (.*) \| (\d+\.\d{2}) \| (.*) \|$/);
+          const rowMatch = trimmedLine.match(
+            /^\| (支出|收入) \| (.+) \| (.*) \| (\d+\.\d{2}) \| (.*) \|$/
+          );
           if (rowMatch) {
             hasValidRow = true;
           } else {
             invalidRowLine = i + 1;
             invalidRowContent = trimmedLine;
-            const errorMsg = `\u7B2C ${invalidRowLine} \u884C\u683C\u5F0F\u4E0D\u6B63\u786E\uFF1A\u8868\u683C\u6570\u636E\u884C\u683C\u5F0F\u5E94\u4E3A "| \u7C7B\u578B | \u5206\u7C7B | \u6807\u7B7E | \u6570\u989D | \u5907\u6CE8 |"\uFF0C\u5176\u4E2D\u7C7B\u578B\u4E3A"\u652F\u51FA"\u6216"\u6536\u5165"\uFF0C\u5206\u7C7B\u548C\u6570\u989D\u4E3A\u5FC5\u586B\uFF0C\u6807\u7B7E\u548C\u5907\u6CE8\u53EF\u4EE5\u4E3A\u7A7A\uFF0C\u6570\u989D\u4E3A\u4E24\u4F4D\u5C0F\u6570\u3002\u5F53\u524D\u884C\uFF1A${invalidRowContent.substring(0, 50)}${invalidRowContent.length > 50 ? "..." : ""}`;
+            const errorMsg = `\u7B2C ${invalidRowLine} \u884C\u683C\u5F0F\u4E0D\u6B63\u786E\uFF1A\u8868\u683C\u6570\u636E\u884C\u683C\u5F0F\u5E94\u4E3A "| \u7C7B\u578B | \u5206\u7C7B | \u6807\u7B7E | \u6570\u989D | \u5907\u6CE8 |"\uFF0C\u5176\u4E2D\u7C7B\u578B\u4E3A"\u652F\u51FA"\u6216"\u6536\u5165"\uFF0C\u5206\u7C7B\u548C\u6570\u989D\u4E3A\u5FC5\u586B\uFF0C\u6807\u7B7E\u548C\u5907\u6CE8\u53EF\u4EE5\u4E3A\u7A7A\uFF0C\u6570\u989D\u4E3A\u4E24\u4F4D\u5C0F\u6570\u3002\u5F53\u524D\u884C\uFF1A${invalidRowContent.substring(
+              0,
+              50
+            )}${invalidRowContent.length > 50 ? "..." : ""}`;
             console.error(`[Purse Plugin] \u683C\u5F0F\u6821\u9A8C\u5931\u8D25: ${errorMsg}`);
             return {
               isValid: false,
@@ -731,7 +761,9 @@ var PursePlugin = class extends import_obsidian3.Plugin {
       }
     }
     if (!hasDateHeader) {
-      console.error('[Purse Plugin] \u683C\u5F0F\u6821\u9A8C\u5931\u8D25: \u7F3A\u5C11\u65E5\u671F\u6807\u9898\uFF08\u683C\u5F0F\u5E94\u4E3A "## xx\u53F7"\uFF0C\u5982 "## 1\u53F7"\uFF09');
+      console.error(
+        '[Purse Plugin] \u683C\u5F0F\u6821\u9A8C\u5931\u8D25: \u7F3A\u5C11\u65E5\u671F\u6807\u9898\uFF08\u683C\u5F0F\u5E94\u4E3A "## xx\u53F7"\uFF0C\u5982 "## 1\u53F7"\uFF09'
+      );
       return {
         isValid: false,
         reason: '\u7F3A\u5C11\u65E5\u671F\u6807\u9898\uFF08\u683C\u5F0F\u5E94\u4E3A "## xx\u53F7"\uFF0C\u5982 "## 1\u53F7"\uFF09'
@@ -739,7 +771,9 @@ var PursePlugin = class extends import_obsidian3.Plugin {
     }
     console.log("[Purse Plugin] \u2713 \u65E5\u671F\u6807\u9898\u68C0\u67E5\u901A\u8FC7");
     if (!hasValidRow) {
-      console.error("[Purse Plugin] \u683C\u5F0F\u6821\u9A8C\u5931\u8D25: \u7F3A\u5C11\u6709\u6548\u7684\u8868\u683C\u6570\u636E\u884C\u3002\u6BCF\u4E2A\u65E5\u671F\u6807\u9898\u4E0B\u5E94\u81F3\u5C11\u6709\u4E00\u6761\u8BB0\u5F55");
+      console.error(
+        "[Purse Plugin] \u683C\u5F0F\u6821\u9A8C\u5931\u8D25: \u7F3A\u5C11\u6709\u6548\u7684\u8868\u683C\u6570\u636E\u884C\u3002\u6BCF\u4E2A\u65E5\u671F\u6807\u9898\u4E0B\u5E94\u81F3\u5C11\u6709\u4E00\u6761\u8BB0\u5F55"
+      );
       return {
         isValid: false,
         reason: '\u7F3A\u5C11\u6709\u6548\u7684\u8868\u683C\u6570\u636E\u884C\u3002\u6BCF\u4E2A\u65E5\u671F\u6807\u9898\u4E0B\u5E94\u81F3\u5C11\u6709\u4E00\u6761\u8BB0\u5F55\uFF0C\u683C\u5F0F\u4E3A "| \u652F\u51FA/\u6536\u5165 | \u5206\u7C7B | \u6807\u7B7E | \u6570\u989D(\u4E24\u4F4D\u5C0F\u6570) | \u5907\u6CE8 |"'
@@ -752,20 +786,28 @@ var PursePlugin = class extends import_obsidian3.Plugin {
   /**
    * 自定义表格渲染
    */
-  customizeTable(table, file, context) {
+  customizeTable(table, file, context, containerElement) {
     var _a;
     const headerRow = table.querySelector("thead tr");
     if (headerRow) {
-      const actionTh = document.createElement("th");
-      actionTh.textContent = "\u64CD\u4F5C";
-      actionTh.className = "purse-action-header";
-      headerRow.appendChild(actionTh);
+      const existedActionHeader = headerRow.querySelector(
+        ".purse-action-header"
+      );
+      if (!existedActionHeader) {
+        const actionTh = document.createElement("th");
+        actionTh.textContent = "\u64CD\u4F5C";
+        actionTh.className = "purse-action-header";
+        headerRow.appendChild(actionTh);
+      }
     }
     const tbody = table.querySelector("tbody");
     if (tbody) {
       const rows = Array.from(tbody.querySelectorAll("tr"));
       rows.forEach((row, index) => {
         var _a2, _b, _c, _d, _e;
+        if (row.querySelector(".purse-action-cell")) {
+          return;
+        }
         const cells = Array.from(row.querySelectorAll("td"));
         if (cells.length < 5)
           return;
@@ -790,7 +832,15 @@ var PursePlugin = class extends import_obsidian3.Plugin {
           deleteBtn.textContent = "\u5220\u9664";
           deleteBtn.className = "purse-delete-btn";
           deleteBtn.onclick = async () => {
-            await this.handleDeleteRow(file, row, type, category, tag, amount, note);
+            await this.handleDeleteRow(
+              file,
+              row,
+              type,
+              category,
+              tag,
+              amount,
+              note
+            );
           };
           buttonContainer.appendChild(deleteBtn);
           actionTd.appendChild(buttonContainer);
@@ -798,10 +848,12 @@ var PursePlugin = class extends import_obsidian3.Plugin {
         }
       });
     }
-    const existingBtn = (_a = table.nextElementSibling) == null ? void 0 : _a.classList.contains("purse-add-btn-container");
+    const existingBtn = (_a = table.nextElementSibling) == null ? void 0 : _a.classList.contains(
+      "purse-add-btn-container"
+    );
     if (existingBtn)
       return;
-    const date = this.findDateForTable(table, file);
+    const date = this.findDateForTable(table, file, containerElement);
     const addBtnContainer = document.createElement("div");
     addBtnContainer.className = "purse-add-btn-container";
     const addBtn = document.createElement("button");
@@ -816,32 +868,99 @@ var PursePlugin = class extends import_obsidian3.Plugin {
   /**
    * 查找表格对应的日期
    */
-  findDateForTable(table, file) {
-    var _a, _b;
-    let element = table;
+  findDateForTable(table, file, containerElement) {
+    var _a, _b, _c;
+    const rootElement = containerElement.closest(
+      ".markdown-preview-view"
+    ) || containerElement.closest(
+      ".markdown-reading-view"
+    ) || containerElement;
+    const allElements = Array.from(rootElement.querySelectorAll("h2, table"));
+    const tableIndex = allElements.indexOf(table);
+    if (tableIndex >= 0) {
+      for (let i = tableIndex - 1; i >= 0; i--) {
+        const element2 = allElements[i];
+        if (element2.tagName === "H2") {
+          const text = ((_a = element2.textContent) == null ? void 0 : _a.trim()) || "";
+          const match = text.match(/^(\d+)号$/);
+          if (match) {
+            return match[1];
+          }
+        }
+      }
+    }
+    let element = table.previousElementSibling;
     while (element) {
-      element = element.previousElementSibling;
-      if (element && element.tagName === "H2") {
-        const text = ((_a = element.textContent) == null ? void 0 : _a.trim()) || "";
+      if (element.tagName === "H2") {
+        const text = ((_b = element.textContent) == null ? void 0 : _b.trim()) || "";
         const match = text.match(/^(\d+)号$/);
         if (match) {
           return match[1];
         }
       }
+      element = element.previousElementSibling;
     }
     let parent = table.parentElement;
-    while (parent) {
-      const h2 = parent.querySelector("h2");
-      if (h2) {
-        const text = ((_b = h2.textContent) == null ? void 0 : _b.trim()) || "";
-        const match = text.match(/^(\d+)号$/);
-        if (match) {
-          return match[1];
+    while (parent && parent !== rootElement) {
+      const siblings = Array.from(parent.children);
+      const tableIndexInParent = siblings.indexOf(table);
+      if (tableIndexInParent >= 0) {
+        for (let i = tableIndexInParent - 1; i >= 0; i--) {
+          const sibling = siblings[i];
+          if (sibling.tagName === "H2") {
+            const text = ((_c = sibling.textContent) == null ? void 0 : _c.trim()) || "";
+            const match = text.match(/^(\d+)号$/);
+            if (match) {
+              return match[1];
+            }
+          }
         }
       }
       parent = parent.parentElement;
     }
+    console.warn("[Purse Plugin] \u65E0\u6CD5\u627E\u5230\u8868\u683C\u5BF9\u5E94\u7684\u65E5\u671F\uFF0C\u4F7F\u7528\u9ED8\u8BA4\u503C 1");
     return "1";
+  }
+  /**
+   * 重新渲染显示指定文件的视图
+   */
+  async rerenderFileViews(file) {
+    const leaves = this.app.workspace.getLeavesOfType("markdown");
+    for (const leaf of leaves) {
+      const view = leaf.view;
+      if (view.file && view.file.path === file.path) {
+        if (view.getMode() === "preview") {
+          view.previewMode.rerender(true);
+          setTimeout(() => {
+            const containerElement = view.containerEl.querySelector(
+              ".markdown-preview-view, .markdown-reading-view"
+            );
+            if (!containerElement)
+              return;
+            const tables = containerElement.querySelectorAll("table");
+            tables.forEach((table) => {
+              const headerRow = table.querySelector("thead tr");
+              if (!headerRow)
+                return;
+              const headers = Array.from(
+                headerRow.querySelectorAll("th")
+              ).map((th) => {
+                var _a;
+                return (_a = th.textContent) == null ? void 0 : _a.trim();
+              });
+              if (headers.length >= 5 && headers[0] === "\u7C7B\u578B" && headers[1] === "\u5206\u7C7B" && headers[2] === "\u6807\u7B7E" && headers[3] === "\u6570\u989D" && headers[4] === "\u5907\u6CE8") {
+                this.customizeTable(
+                  table,
+                  file,
+                  null,
+                  containerElement
+                );
+              }
+            });
+          }, 0);
+        }
+      }
+    }
   }
   /**
    * 处理删除行
@@ -864,10 +983,7 @@ var PursePlugin = class extends import_obsidian3.Plugin {
           break;
         }
       }
-      const view = this.app.workspace.getActiveViewOfType(import_obsidian3.MarkdownView);
-      if (view) {
-        view.previewMode.rerender(true);
-      }
+      await this.rerenderFileViews(file);
       new import_obsidian3.Notice("\u8BB0\u5F55\u5DF2\u5220\u9664");
     }
   }
@@ -876,27 +992,42 @@ var PursePlugin = class extends import_obsidian3.Plugin {
    */
   handleEditRow(file, row, type, category, tag, amount, note) {
     const oldRowContent = `| ${type} | ${category} | ${tag} | ${amount} | ${note} |`;
-    const date = this.findDateForTable(row.closest("table"), file);
-    const modal = new EditRecordModal(this.app, this, file, date, type, category, tag, amount, note, oldRowContent, async () => {
-      await this.formatFile(file);
-      const view = this.app.workspace.getActiveViewOfType(import_obsidian3.MarkdownView);
-      if (view) {
-        view.previewMode.rerender(true);
+    const table = row.closest("table");
+    const containerElement = table.closest(".markdown-preview-view") || table.closest(".markdown-rendered") || document.body;
+    const date = this.findDateForTable(table, file, containerElement);
+    const modal = new EditRecordModal(
+      this.app,
+      this,
+      file,
+      date,
+      type,
+      category,
+      tag,
+      amount,
+      note,
+      oldRowContent,
+      async () => {
+        await this.formatFile(file);
+        await this.rerenderFileViews(file);
       }
-    });
+    );
     modal.open();
   }
   /**
    * 处理添加记录
    */
   handleAddRecord(file, date) {
-    const modal = new AddRecordModal(this.app, this, file, date, -1, async () => {
-      await this.formatFile(file);
-      const view = this.app.workspace.getActiveViewOfType(import_obsidian3.MarkdownView);
-      if (view) {
-        view.previewMode.rerender(true);
+    const modal = new AddRecordModal(
+      this.app,
+      this,
+      file,
+      date,
+      -1,
+      async () => {
+        await this.formatFile(file);
+        await this.rerenderFileViews(file);
       }
-    });
+    );
     modal.open();
   }
   /**
